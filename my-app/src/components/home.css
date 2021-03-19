@@ -1,0 +1,28 @@
+.TextAnimation {
+  animation: fadeinSlide ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeinSlide {
+  from {
+    opacity: 0;
+    padding-top: 33vh;
+  }
+  to {
+    opacity: 1;
+    padding-top: 30vh;
+  }
+}
+.FadeIn {
+  animation: fadein ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
