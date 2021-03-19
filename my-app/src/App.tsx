@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Header, Home, About, Work } from "../src/components";
+import { Header, Home, About, Projects } from "../src/components";
 import styled, { css, keyframes } from "styled-components";
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const BackgroundWrapper = styled.div`
@@ -15,20 +15,23 @@ const BackgroundWrapper = styled.div`
 `;
 
 function App() {
+  const [currentRoute, setCurrentRoute] = useState<number>(0);
+  console.log("CurrentRoute", currentRoute);
   return (
     <Router>
       <div className="App">
         <BackgroundWrapper />
-        <Header />
+        <Header value={currentRoute} />
         <Switch>
           <Route path="/about">
-            <About />
+            <About setStateHeader={setCurrentRoute} />
           </Route>
-          <Route path="/work">
-            <Work />
+          <Route path="/work"></Route>
+          <Route path="/projects">
+            <Projects setStateHeader={setCurrentRoute} />
           </Route>
           <Route path="/">
-            <Home />
+            <Home setStateHeader={setCurrentRoute} />
           </Route>
         </Switch>
       </div>

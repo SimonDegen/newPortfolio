@@ -25,11 +25,15 @@ const StyledLink = styled.a`
   text-decoration: none;
   color: #57ebff;
 `;
-export const Home = () => {
+type homeProps = {
+  setStateHeader: (value: number) => void;
+};
+export const Home: React.FC<homeProps> = ({ setStateHeader }) => {
+  setStateHeader(0);
   return (
     <MainContainer className="TextAnimation">
       <h1>Hi, I'm Simon.</h1>
-      <StyledHeader>Consulent, Innovator, Student</StyledHeader>
+      <StyledHeader>Consultent, Innovator, Student</StyledHeader>
       <StyledText>
         Masterstudent in industrial economics, with a bachelores degree in
         computer engineering. <br />

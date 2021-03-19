@@ -18,8 +18,11 @@ const StyledHeader = styled.div`
   font-size: 3.6rem;
   color: white;
 `;
-
-export const About = () => {
+type aboutProps = {
+  setStateHeader: (value: number) => void;
+};
+export const About: React.FC<aboutProps> = ({ setStateHeader }) => {
+  setStateHeader(1);
   return (
     <AboutContainer className="TextAnimation">
       <StyledHeader> Testing if this works</StyledHeader>

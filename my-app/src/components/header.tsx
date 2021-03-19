@@ -30,6 +30,7 @@ const HeaderItems = styled.h1`
   margin: auto;
   text-align: center;
   z-index: 9999;
+  color: ${(props) => props.color};
 `;
 const RightHeader = styled.div`
   padding: 10px;
@@ -43,19 +44,24 @@ const RightHeader = styled.div`
 const StyledSpan = styled.span`
   color: #57ebff;
 `;
-export const Header = () => {
+type HeaderProps = {
+  value: number;
+};
+export const Header: React.FC<HeaderProps> = ({ value }) => {
   const history = useHistory();
   return (
     <StyledHeader>
       <LeftHeader>
         <HeaderItems
+          color={value == 0 ? "#57ebff" : "white"}
           onClick={() => {
             history.push("/home");
           }}
         >
-          <StyledSpan>Home</StyledSpan>
+          Home
         </HeaderItems>
         <HeaderItems
+          color={value == 1 ? "#57ebff" : "white"}
           onClick={() => {
             history.push("/about");
           }}
@@ -63,13 +69,14 @@ export const Header = () => {
           About
         </HeaderItems>
         <HeaderItems
+          color={value == 2 ? "#57ebff" : "white"}
           onClick={() => {
-            history.push("/work");
+            history.push("/projects");
           }}
         >
-          Work
+          Projects
         </HeaderItems>
-        <HeaderItems>Projects</HeaderItems>
+        <HeaderItems>Work</HeaderItems>
       </LeftHeader>
       <RightHeader>
         <h1>SD</h1>
