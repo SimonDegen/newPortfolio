@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import "../components/home.css";
+import "../components/SharedStyling.css";
+import { WorkFooter } from "./workFooter";
 
 const MainContainer = styled.div`
   position: relative;
@@ -43,6 +44,8 @@ export const Home: React.FC<homeProps> = ({ setStateHeader }) => {
         </StyledLink>
         <br />
         <br /> <StyledLink href="/about">Learn more about me here.</StyledLink>
+        <br /> <br />
+        <StyledLink href="/contact">Contact me here.</StyledLink>
       </StyledText>
     </MainContainer>
   );

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import "../components/home.css";
+import "../components/SharedStyling.css";
 
 const AboutContainer = styled.div`
   position: relative;

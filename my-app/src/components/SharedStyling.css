@@ -16,6 +16,21 @@ html {
     padding-top: 30vh;
   }
 }
+.workAnimation {
+  animation: fadeinSlideUpper ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeinSlideUpper {
+  from {
+    opacity: 0;
+    padding-top: 23vh;
+  }
+  to {
+    opacity: 1;
+    padding-top: 20vh;
+  }
+}
 .FadeIn {
   animation: fadein ease 2s;
   animation-iteration-count: 1;

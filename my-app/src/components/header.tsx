@@ -21,7 +21,7 @@ const LeftHeader = styled.div`
   line-height: 6vh;
 `;
 const HeaderItems = styled.h1`
-  width: 8vw;
+  width: 6vw;
   margin: 0;
   font-size: large;
   height: 100%;
@@ -41,9 +41,6 @@ const RightHeader = styled.div`
   right: 10vw;
   margin-right: 10vw;
 `;
-const StyledSpan = styled.span`
-  color: #57ebff;
-`;
 type HeaderProps = {
   value: number;
 };
@@ -55,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({ value }) => {
         <HeaderItems
           color={value == 0 ? "#57ebff" : "white"}
           onClick={() => {
-            history.push("/home");
+            history.push("/");
           }}
         >
           Home
@@ -76,7 +73,22 @@ export const Header: React.FC<HeaderProps> = ({ value }) => {
         >
           Projects
         </HeaderItems>
-        <HeaderItems>Work</HeaderItems>
+        <HeaderItems
+          color={value == 3 ? "#57ebff" : "white"}
+          onClick={() => {
+            history.push("/work");
+          }}
+        >
+          Work
+        </HeaderItems>
+        <HeaderItems
+          color={value == 4 ? "#57ebff" : "white"}
+          onClick={() => {
+            history.push("/contact");
+          }}
+        >
+          Contact
+        </HeaderItems>
       </LeftHeader>
       <RightHeader>
         <h1>SD</h1>
