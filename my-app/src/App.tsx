@@ -5,6 +5,7 @@ import styled, { css, keyframes } from "styled-components";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Contact } from "./components/contact";
+import "../src/components/SharedStyling.css";
 
 const BackgroundWrapper = styled.div`
   position: fixed;

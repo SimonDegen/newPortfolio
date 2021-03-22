@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import "../components/SharedStyling.css";
-import history, { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { ImageSliderComponent } from "./imageSlider";
 
 const PageWrapper = styled.div`
   height: 98.2vh;
@@ -21,38 +22,6 @@ const HeaderDiv = styled.div`
 const StyledHeader = styled.div`
   font-size: 3.6rem;
   color: white;
-`;
-const WorkObjectCard = styled.div<{ backgroundImage?: string }>`
-  height: 50vh;
-  margin: 2rem;
-  width: 50vw;
-  background-image: url(${(props) => props.backgroundImage || ""});
-  background-size: cover;
-  background-repeat: no-repeat;
-  line-height: 30vh;
-  color: white;
-  filter: brightness(0.5);
-  cursor: pointer;
-  &:hover {
-    margin-top: 1vh;
-    color: white;
-    filter: brightness(1);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
-  }
-`;
-const SlideContainer = styled.div`
-  position: relative;
-  margin-top: 43vh;
-  left: 5vw;
-  bottom: 0;
-  z-index: 10;
-  height: 70vh;
-  width: 220%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `;
 type projectProps = {
   setStateHeader: (value: number) => void;
@@ -89,7 +58,15 @@ export const Projects: React.FC<projectProps> = ({ setStateHeader }) => {
           to frontend Consultent work
         </StyledHeader>
       </HeaderDiv>
-      <SlideContainer className="SlideIn">
+      <ImageSliderComponent
+        imageLinksAndRoutes={[
+          { imageLink: "Mb.jpg", projectRoute: "/masterblaster" },
+          { imageLink: "AvalonReal.jpg", projectRoute: "/avalon" },
+          { imageLink: "BasicLayout.png", projectRoute: "/bachelor" },
+          { imageLink: "Portonew.png", projectRoute: "/portefolio" },
+        ]}
+      />
+      {/*  <SlideContainer className="SlideIn">
         <WorkObjectCard backgroundImage="Mb.jpg" />
         <WorkObjectCard
           backgroundImage="AvalonReal.jpg"
@@ -99,7 +76,7 @@ export const Projects: React.FC<projectProps> = ({ setStateHeader }) => {
         />
         <WorkObjectCard backgroundImage="BasicLayout.png" />
         <WorkObjectCard backgroundImage="Portonew.png" />
-      </SlideContainer>
+      </SlideContainer> */}
     </PageWrapper>
   );
 };

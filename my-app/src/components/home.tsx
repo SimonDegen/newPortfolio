@@ -34,11 +34,11 @@ export const Home: React.FC<homeProps> = ({ setStateHeader }) => {
   return (
     <MainContainer className="TextAnimation">
       <h1>Hi, I'm Simon.</h1>
-      <StyledHeader>Consultent, Innovator, Student</StyledHeader>
+      <StyledHeader>Consultant, Innovator, Student</StyledHeader>
       <StyledText>
         Masterstudent in industrial economics, with a bachelores degree in
         computer engineering. <br />
-        Working part time as a consultent at{" "}
+        Working part time as a consultant at{" "}
         <StyledLink target="blank" href="https://www.veni.no">
           Veni.
         </StyledLink>
