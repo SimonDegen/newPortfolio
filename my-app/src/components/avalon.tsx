@@ -42,7 +42,7 @@ const LeftSide = styled.div`
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
+  margin-left: 4rem;
 `;
 const RightSide = styled.div`
   display: flex;
@@ -51,12 +51,12 @@ const RightSide = styled.div`
   width: 47vw;
   height: 65vh;
   margin-top: 10vh;
-  background-color: rgba(56, 56, 56, 0.733);
+  background-color: rgba(56, 56, 56, 0.815);
   align-items: center;
   padding: 2rem;
 `;
 const SliderWrapper = styled.div`
-  margin-top: 10vh;
+  margin-top: 7vh;
 `;
 const QuoteStyle = styled.h1`
   color: #ffffff;
@@ -71,8 +71,10 @@ export const Avalon: React.FC = () => {
         <LeftSide>
           <StyledHeader>Avalon</StyledHeader>
           <StyledText>Created by Simon Degen and Marius Sørensen.</StyledText>
-          <a href="https://github.com/sorensenmarius/AvalonWebAppNoDB">
-            {" "}
+          <a
+            href="https://github.com/sorensenmarius/AvalonWebAppNoDB"
+            target="_blank"
+          >
             <img src="GH.png" width="10%" alt="" />
           </a>
           <SliderWrapper>
@@ -99,27 +101,30 @@ export const Avalon: React.FC = () => {
             <br /> -Marilyn Monroe"
           </QuoteStyle>
           <StyledText1>
-            Avalon: The Resistance is a card role playing game for multiple
-            players, which we have digitalized. <br /> <br />
+            As stated so well by Marilyn Monroe, everyone deserves the right tp
+            twinkle. The Problem and inspiration for creating this project was
+            the fact that every round one player had to sit out and function as
+            the 'game master' and therefor could not participate as a player in
+            the game. We seeked to solve this so that everyone could play all
+            the time. Our solutions takes upon itself the role of the game
+            master such that everyone can participate. <br />
+            <br />
             Avalon is a game of social deduction in which 5-10 players work
             together to find the players that have been dealt the evil roles. To
             remove the need for a separate person called a 'game master', we
             have digitalized Avalon so that you and your friends can play using
             your smartphones and a TV. <br />
             <br />
-            Additionally, we used WebSockets for real-time connections, which
-            has grown to become one of my favorite technologies. This project is
-            made in collaboration with Marius Sørensen. Check out his GitHub,
-            and check out the project at avalon.s0rensen.no
+            Now over to some of the technicalities. We used C#/.Net for the
+            backend and React for the frontend. Additionally, we used WebSockets
+            for real-time connections, which has grown to become one of my
+            favorite technologies. This project is made in collaboration with
+            Marius Sørensen. Check out his GitHub, and check out the project at
+            avalon.s0rensen.no
           </StyledText1>
         </RightSide>
       </ProjectPage>
-      <WorkFooter
-        hasNextPage={false}
-        hasPreviousPage={false}
-        nextPage="test"
-        previousPage="test"
-      />
+      <WorkFooter nextPage="bachelor" previousPage="masterblaster" />
     </ProjectContainer>
   );
 };

@@ -1,14 +1,11 @@
 import { useHistory } from "react-router";
 import styled from "styled-components";
-
 type footerProps = {
-  nextPage: string;
-  previousPage: string;
-  hasNextPage: boolean;
-  hasPreviousPage: boolean;
+  nextPage?: string;
+  previousPage?: string;
 };
 const StyledFooter = styled.div`
-  position: relative;
+  position: absolute;
   bottom: 0;
   height: 10vh;
   width: 100vw;
@@ -20,11 +17,9 @@ const StyledFooter = styled.div`
 `;
 const PreviousPageLink = styled.a`
   display: flex;
-  margin-left: 7vw;
   align-items: center;
   color: #57ebff;
-  cursor: pointer;
-  width: 43vw;
+  cursor: url("AvalonRealSmall.png"), pointer;
 `;
 const NextPageLink = styled.a`
   display: flex;
@@ -37,39 +32,49 @@ const NextPageLink = styled.a`
   color: #57ebff;
   cursor: pointer;
 `;
-const FancySpan = styled.span`
-  cursor: pointer;
+const Container = styled.div`
+  display: flex;
+  width: 30vw;
+  height: 100%;
+  justify-content: center;
+  margin-right: 15vw;
+  cursor: url("AvalonRealSmall.png"), pointer;
 `;
 export const WorkFooter: React.FC<footerProps> = ({
   nextPage,
-  hasNextPage,
   previousPage,
 }) => {
   const history = useHistory();
   return (
     <StyledFooter>
-      {previousPage !== "" && (
-        <PreviousPageLink
-          onClick={() => {
-            history.push(`/${previousPage}`);
-          }}
-        >
-          {" "}
-          &lt; Previous project
-        </PreviousPageLink>
-      )}
-      For more information about the project contact me
-      {nextPage !== "" && (
-        <NextPageLink>
-          <FancySpan
+      {previousPage && (
+        <Container>
+          <PreviousPageLink
             onClick={() => {
-              history.push(`/${nextPage}`);
+              history.push(`/${previousPage}`);
             }}
           >
-            Next Project &gt;
-          </FancySpan>
+            {" "}
+            &lt; Previous project
+          </PreviousPageLink>
+        </Container>
+      )}
+      {!previousPage && (
+        <Container>
+          <PreviousPageLink />
+        </Container>
+      )}
+      For more information about the project contact me
+      {nextPage && (
+        <NextPageLink
+          onClick={() => {
+            history.push(`/${nextPage}`);
+          }}
+        >
+          Next Project &gt;
         </NextPageLink>
       )}
+      {!nextPage && <NextPageLink />}
     </StyledFooter>
   );
 };

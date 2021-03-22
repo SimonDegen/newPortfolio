@@ -6,6 +6,8 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Contact } from "./components/contact";
 import "../src/components/SharedStyling.css";
+import { BachelorPage, MasterBlasterPage } from "./pages";
+import { OldPortfolioPage } from "./pages/oldPortfolio";
 
 const BackgroundWrapper = styled.div`
   position: fixed;
@@ -39,6 +41,15 @@ function App() {
           </Route>
           <Route path="/avalon">
             <Avalon />
+          </Route>
+          <Route path="/masterblaster">
+            <MasterBlasterPage />
+          </Route>
+          <Route path="/bachelor">
+            <BachelorPage />
+          </Route>
+          <Route path="/oldportfolio">
+            <OldPortfolioPage />
           </Route>
           <Route path="/">
             <Home setStateHeader={setCurrentRoute} />
