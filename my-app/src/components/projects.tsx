@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { ImageSliderComponent } from "./imageSlider";
 
 const PageWrapper = styled.div`
+  position: fixed;
   height: 98.2vh;
   position: relative;
   display: flex;

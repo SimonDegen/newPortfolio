@@ -19,7 +19,7 @@ const PreviousPageLink = styled.a`
   display: flex;
   align-items: center;
   color: #57ebff;
-  cursor: url("AvalonRealSmall.png"), pointer;
+  cursor: pointer;
 `;
 const NextPageLink = styled.a`
   display: flex;
@@ -38,7 +38,6 @@ const Container = styled.div`
   height: 100%;
   justify-content: center;
   margin-right: 15vw;
-  cursor: url("AvalonRealSmall.png"), pointer;
 `;
 export const WorkFooter: React.FC<footerProps> = ({
   nextPage,
@@ -64,7 +63,7 @@ export const WorkFooter: React.FC<footerProps> = ({
           <PreviousPageLink />
         </Container>
       )}
-      For more information about the project contact me
+      For more information about a project contact me
       {nextPage && (
         <NextPageLink
           onClick={() => {

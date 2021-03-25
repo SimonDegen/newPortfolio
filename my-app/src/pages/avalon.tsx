@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { WorkFooter } from "./workFooter";
+import { WorkFooter } from "../components";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const ProjectContainer = styled.div`
@@ -8,6 +8,7 @@ const ProjectContainer = styled.div`
   flex-direction: column;
   z-index: 1;
   height: 100vh;
+  background-image: black;
 `;
 const ProjectPage = styled.div`
   position: relative;
