@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Header, Home, About, Projects, Work } from "../src/components";
-import styled, { css, keyframes } from "styled-components";
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import styled from "styled-components";
+import { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Contact } from "./components/contact";
 import "../src/components/SharedStyling.css";
 import { BachelorPage, MasterBlasterPage, Avalon } from "./pages";
@@ -12,7 +11,7 @@ import { OldPortfolioPage } from "./pages/oldPortfolio";
 const BackgroundWrapper = styled.div`
   position: fixed;
   height: 100vh;
-  width: 150vw;
+  width: 100vw;
   background-image: url("background.jpg");
   background-repeat: no-repeat;
   background-size: 100vw;

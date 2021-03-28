@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import "../components/SharedStyling.css";
-import { WorkFooter } from "./workFooter";
 
 const MainContainer = styled.div`
   position: relative;
