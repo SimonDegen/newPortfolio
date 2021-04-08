@@ -5,3 +5,5 @@ export * from "./projects";
 export * from "./work";
 export * from "./workFooter";
 export * from "./imageSlider";
+export * from "./gradientContainer";
+export * from "./shinyCards";

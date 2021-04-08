@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { GradiantContainer, ShinyCards } from "../components";
 type contactProps = {
   setStateHeader: (value: number) => void;
 };
@@ -11,68 +11,18 @@ const MainContainer = styled.div`
   margin-right: 10vw;
   height: 100%;
   width: 50vw;
-  padding-top: 20vh;
-  padding-left: 9vw;
+  padding-left: 5vw;
   color: white;
-`;
-
-const StyledHeader = styled.div`
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 4vh;
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-  color: #57ebff;
-  align-items: center;
-  height: 100%;
-  width: 33%;
-  cursor: pointer;
-`;
-const StyledLinkA = styled.a`
-  text-decoration: none;
-  color: #57ebff;
-  align-items: center;
-  height: 100%;
-  width: 33%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-`;
-const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
-  height: 10vh;
-  width: 40vw;
-  margin-top: 30vh;
 `;
 export const Contact: React.FC<contactProps> = ({ setStateHeader }) => {
   setStateHeader(4);
   return (
-    <MainContainer className="worknimation">
-      <StyledHeader>Dont hesitate to contact me!</StyledHeader>
-      You can reach me at:
-      <StyledLink href="mailto:simondegen99@gmail.com">
-        Simondegen99@gmail.com
-      </StyledLink>
-      <LogoContainer>
-        <StyledLinkA
-          target="blank"
-          href="https://www.linkedin.com/in/simon-degen-02b383192/"
-        >
-          <img src="LI.png" height="90%" alt="" />
-        </StyledLinkA>
-        <StyledLinkA href="mailto:simondegen99@gmail.com">
-          <img src="OL.png" height="100%" alt="" />
-        </StyledLinkA>
-        <StyledLinkA target="blank" href="https://github.com/SimonDegen">
-          <img src="GH.png" height="100%" alt="" />
-        </StyledLinkA>
-      </LogoContainer>
+    <MainContainer className="TextAnimation">
+      <ShinyCards></ShinyCards>
+      {/* <GradiantContainer
+        header="test"
+        text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      /> */}
     </MainContainer>
   );
 };
